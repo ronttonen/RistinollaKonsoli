@@ -1,3 +1,3 @@
 # RistinollaKonsoli
 
-Saa avattua command linella java -jar Ristinolla.jar
+Saa avattua command linella java -jar ristinolla.jar. runnableJar kansiossa.

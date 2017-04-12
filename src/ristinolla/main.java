@@ -18,6 +18,7 @@ public class main{
 				numberOfGames++;
 			}
 		}
+		lokilukija.close();
 		// define variables
 		int gametype = 0;
 		String p1 = null;

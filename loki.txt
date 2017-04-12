@@ -1,0 +1,42 @@
+Ensimmäisen pelaajan nimi on: asd
+Toisen pelaajan nimi on: asded
+Ensimmäisen pelaajan nimi on: moi
+Toisen pelaajan nimi on: haloo
+Ensimmäisen pelaajan nimi on: haloo
+Toisen pelaajan nimi on: haloo
+Uusi peli
+ 
+Ensimmäisen pelaajan nimi on: kana
+Toisen pelaajan nimi on: muna
+
+kana laittoi ruutuun: 1
+
+muna laittoi ruutuun 2
+
+kana laittoi ruutuun: 4
+
+muna laittoi ruutuun 9
+
+kana laittoi ruutuun: 7
+
+Uusi peli
+ 
+Ensimmäisen pelaajan nimi on: asd
+Toisen pelaajan nimi on: asd
+asd laittoi ruutuun: 1
+asd laittoi ruutuun: 5
+asd laittoi ruutuun: 2
+asd laittoi ruutuun: 8
+asd laittoi ruutuun: 3
+
+asd Voitti
+
+Uusi peli
+ 
+Ensimmäisen pelaajan nimi on: asd
+
+asd laittoi ruutuun: 1
+asd laittoi ruutuun: 2
+asd laittoi ruutuun: 3
+
+asd Voitti

@@ -1,17 +1,25 @@
 package ristinolla;
 
 import java.util.Scanner;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.InputMismatchException;
 
 public class main{
 	private static Scanner lu = new Scanner(System.in);
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		// define variables
 		int gametype = 0;
 		String p1 = null;
 		String p2 = null;
+		PrintWriter loki = new PrintWriter(new FileWriter("loki.txt", true));
 		
+		loki.println("");
+		loki.println("Uusi peli");
+		loki.println(" ");
 		//gametype must be defined 
 		do{
 			try { // single or multiplayer
@@ -32,6 +40,7 @@ public class main{
 			try { //p1 name
 				p("Pelaajan 1 nimi");
 				p1 = lu.next();
+				loki.println("Ensimmäisen pelaajan nimi on: " + p1);
 			}
 			catch(InputMismatchException e){
 				break;
@@ -44,6 +53,7 @@ public class main{
 				try { //p2 name
 					p("Pelaajan 2 nimi");
 					p2 = lu.next();
+					loki.println("Toisen pelaajan nimi on: " + p2);
 				}
 				catch(InputMismatchException e){
 					break;
@@ -52,7 +62,11 @@ public class main{
 			while (p2 == null);
 		}
 		
+		else {
+			p2 = "Tietokone";
+		}
 		
+		loki.println("");
 		int turn = 0;
 		int win = 0;
 		int a = 0;
@@ -69,18 +83,21 @@ public class main{
 			win = checkWin(taulu);
 			p(win + " ");
 			if (win == 1){
-				p("X VOITTI");
+				p(p1 + " VOITTI");
 				victoryDance(p1);
 				turn = 2;
+				
 			}
 			else if(win == 2){
-				p("O VOITTI");
+				p(p2 + " VOITTI");
 				victoryDance(p2);
 				turn = 2;
+				
 			}
 			else if(win == 3){
 				p("TASAPELI");
 				turn = 2;
+				
 			}
 			else if (win == 0){
 				if (turn == 0 && win == 0){
@@ -100,6 +117,7 @@ public class main{
 						if (taulu[sy-1] != 'X' && taulu[sy-1] != 'O'){
 							taulu[sy-1] = 'X';
 							turn = 1;
+							loki.println(p1 + " laittoi ruutuun: " + sy);
 						}
 					}
 					while (turn == 0);
@@ -121,6 +139,7 @@ public class main{
 							if (taulu[sy-1] != 'X' && taulu[sy-1] != 'O'){
 								taulu[sy-1] = 'O';
 								turn = 0;
+								loki.println(p2 + " laittoi ruutuun: " + sy);
 							}
 						}
 						while(turn == 1);
@@ -135,18 +154,24 @@ public class main{
 				}
 				win = checkWin(taulu);
 				if (win == 1){
-					p("X VOITTI");
+					p(p1 + " VOITTI");
 					victoryDance(p1);
 					turn = 2;
+					loki.println("");
+					loki.println(p1 + " Voitti");
 				}
 				else if(win == 2){
-					p("O VOITTI");
+					p(p2 + " VOITTI");
 					victoryDance(p2);
 					turn = 2;
+					loki.println("");
+					loki.println(p2 + " Voitti");
 				}
 				else if(win == 3){
 					p("TASAPELI");
 					turn = 2;
+					loki.println("");
+					loki.println("Tasapeli");
 				}
 			}
 		}
@@ -154,14 +179,15 @@ public class main{
 		clear();
 		tulostaTaulu(taulu);
 		if (win == 1){
-			p("X VOITTI");
+			p(p1 + " VOITTI");
 		}
 		else if(win == 2){
-			p("O VOITTI");
+			p(p2 + " VOITTI");
 		}
 		else if(win == 3){
 			p("TASAPELI");
 		}
+		loki.close();
 	}
 	
 	/*FUNCTIONS START*/

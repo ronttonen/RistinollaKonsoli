@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.InputMismatchException;
+import java.util.Random;
 
 public class main{
 	private static Scanner lu = new Scanner(System.in);
@@ -48,6 +49,9 @@ public class main{
 		}
 		while (p1 == null);
 		//get player 2 name if needed
+		if (gametype == 2 && p1 != null) {
+			
+		
 		if (gametype == 2 && p1 != null){
 			do {
 				try { //p2 name
@@ -62,10 +66,8 @@ public class main{
 			while (p2 == null);
 		}
 		
-		else {
-			p2 = "Tietokone";
-		}
-		
+		loki.println("");
+		loki.println("Kaksinpeli");
 		loki.println("");
 		int turn = 0;
 		int win = 0;
@@ -103,7 +105,7 @@ public class main{
 				if (turn == 0 && win == 0){
 					do{
 						
-						p("Pelaajan X vuoro syötä 1-9");
+						p("Pelaajan " + p1 + " vuoro syötä 1-9");
 						int sy;
 						try{
 							sy = lu.nextInt(); // TRY CATCH
@@ -125,7 +127,7 @@ public class main{
 				else {
 					if (gametype == 2 && win == 0){
 						do{
-							p("Pelaajan O vuoro syötä 1-9");
+							p("Pelaajan " + p2 + " vuoro syötä 1-9");
 							int sy;
 							try{
 								sy = lu.nextInt(); // TRY CATCH
@@ -144,13 +146,13 @@ public class main{
 						}
 						while(turn == 1);
 					}
-					else if (gametype == 1 && turn == 1 && win == 0){
-						wait(750);
-						clear();
-						tulostaTaulu(taulu);
-						botPelaa(taulu);
-						turn = 0;
-					}
+					//else if (gametype == 1 && turn == 1 && win == 0){
+						//wait(750);
+						//clear();
+						//tulostaTaulu(taulu);
+						//botPelaa(taulu);
+						//turn = 0;
+					//}
 				}
 				win = checkWin(taulu);
 				if (win == 1){
@@ -189,6 +191,79 @@ public class main{
 		}
 		loki.close();
 	}
+		else {
+			loki.println("");
+			loki.println("Yksinpeli");
+			loki.println("");
+			p2 = "Tietokone";
+			int turn = 1;
+			int target;
+			int win = 0;
+			int a = 0;
+			botDance(1, 250); // LOOPS, WAIT
+			char[] taulu = new char[9]; 
+			for (int i=0;i<taulu.length;i++){
+					a = i+1;
+					taulu[i] = Character.forDigit(a, 10);			
+			}
+			clear();
+			tulostaTaulu(taulu);
+			do {
+				while(turn == 1) {
+					
+				p("Pelaajan " + p1 + " vuoro syötä 1-9");
+				int sy;
+				try{
+					sy = lu.nextInt(); // TRY CATCH
+				}
+				catch(InputMismatchException e){
+					break;
+				}					
+				if (sy > 9 || sy < 1){
+					break;
+				}
+				if (taulu[sy-1] != 'X' && taulu[sy-1] != 'O'){
+					taulu[sy-1] = 'X';
+					loki.println(p1 + " laittoi X:n ruutuun: " + sy);
+					turn = 2;
+				}
+				}			
+				clear();
+				tulostaTaulu(taulu);
+				win = checkWin(taulu);
+				if (win == 0) {
+				p(p2 + "en vuoro");
+				wait(750);
+				target = botPelaa(taulu, win);
+				loki.println("Tietokone laittoi ruutuun: " + target);
+				clear();
+				tulostaTaulu(taulu);
+				win = checkWin(taulu);
+				turn = 1;
+				}
+			
+	} while (win == 0);
+			if (win == 1){
+				p(p1 + " VOITTI");
+				victoryDance(p1);
+				loki.println("");
+				loki.println(p1 + " Voitti");
+			}
+			else if(win == 2){
+				p(p2 + " VOITTI");
+				victoryDance(p2);
+				loki.println("");
+				loki.println(p2 + " Voitti");
+			}
+			else if(win == 3){
+				p("TASAPELI");
+				loki.println("");
+				loki.println("Tasapeli");
+			}
+			loki.close();
+	}
+	}
+	
 	
 	/*FUNCTIONS START*/
 	public static void wait(int mil){
@@ -268,14 +343,29 @@ public class main{
 	}
 	
 	//botPelaa palauttaa numeron 0-9 mihin ruutuun se laittaa arvon
-	public static int botPelaa(char[] t){
+	public static int botPelaa(char[] t, int win) throws IOException{
 		// BOT always O
-		if (t[5] != 'X' && t[5] != 'O'){
-			return (int) 5;
-		}
-		return 0;
+		int target;
+		win = checkWin(t);
+		if (win == 0) {
+			
+		do {
+			Random rnd = new Random();
+			target = rnd.nextInt(9);
+			if (t[target] != 'X' && t[target] != 'O') {
+				
+				int ruutu = target + 1;
+				t[target] = 'O';
+				win = checkWin(t);
+				return ruutu;
+				
+			}
 		
-	}
+			
+		} while( t[target] == 'X' || t[target] == 'O' );
+		}
+		return win = 2;
+			}
 	
 	public static void victoryDance(String p){
 		for (int i=0;i<50;i++){

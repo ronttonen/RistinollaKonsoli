@@ -117,7 +117,7 @@ public class main{
 						if (taulu[sy-1] != 'X' && taulu[sy-1] != 'O'){
 							taulu[sy-1] = 'X';
 							turn = 1;
-							loki.println(p1 + " laittoi ruutuun: " + sy);
+							loki.println(p1 + " laittoi X:n ruutuun: " + sy);
 						}
 					}
 					while (turn == 0);
@@ -139,7 +139,7 @@ public class main{
 							if (taulu[sy-1] != 'X' && taulu[sy-1] != 'O'){
 								taulu[sy-1] = 'O';
 								turn = 0;
-								loki.println(p2 + " laittoi ruutuun: " + sy);
+								loki.println(p2 + " laittoi O:n ruutuun: " + sy);
 							}
 						}
 						while(turn == 1);

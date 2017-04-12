@@ -1,0 +1,10 @@
+
+Uusi peli
+ 
+Ensimmäisen pelaajan nimi on: moikka
+
+moikka laittoi X:n ruutuun: 1
+moikka laittoi X:n ruutuun: 2
+moikka laittoi X:n ruutuun: 3
+
+moikka Voitti

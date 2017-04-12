@@ -1,217 +1,35 @@
-Ensimmäisen pelaajan nimi on: asd
-Toisen pelaajan nimi on: asded
-Ensimmäisen pelaajan nimi on: moi
-Toisen pelaajan nimi on: haloo
-Ensimmäisen pelaajan nimi on: haloo
-Toisen pelaajan nimi on: haloo
+
 Uusi peli
+Peli numero: 0
  
 Ensimmäisen pelaajan nimi on: kana
-Toisen pelaajan nimi on: muna
 
-kana laittoi ruutuun: 1
+Yksinpeli
 
-muna laittoi ruutuun 2
-
-kana laittoi ruutuun: 4
-
-muna laittoi ruutuun 9
-
-kana laittoi ruutuun: 7
-
-Uusi peli
- 
-Ensimmäisen pelaajan nimi on: asd
-Toisen pelaajan nimi on: asd
-asd laittoi ruutuun: 1
-asd laittoi ruutuun: 5
-asd laittoi ruutuun: 2
-asd laittoi ruutuun: 8
-asd laittoi ruutuun: 3
-
-asd Voitti
-
-Uusi peli
- 
-Ensimmäisen pelaajan nimi on: asd
-
-asd laittoi ruutuun: 1
-asd laittoi ruutuun: 2
-asd laittoi ruutuun: 3
-
-asd Voitti
-Tietokone laittoi ruutuun: 2
-Tietokone laittoi ruutuun: 3
-Tietokone laittoi ruutuun: 2
-Tietokone laittoi ruutuun: 5
-Tietokone laittoi ruutuun: 8
-Tietokone laittoi ruutuun: 3
-Tietokone laittoi ruutuun: 2
-Tietokone laittoi ruutuun: 4
-Tietokone laittoi ruutuun: 3
-Tietokone laittoi ruutuun: 7
-Tietokone laittoi ruutuun: 3
-Tietokone laittoi ruutuun: 7
-
-Uusi peli
- 
-Ensimmäisen pelaajan nimi on: moro
-moro laittoi X:n ruutuun: 1
-moro laittoi X:n ruutuun: 2
-moro laittoi X:n ruutuun: 3
-
-moro Voitti
-
-Uusi peli
- 
-Ensimmäisen pelaajan nimi on: asd
-asd laittoi X:n ruutuun: 1
-Tietokone laittoi ruutuun: 79
-asd laittoi X:n ruutuun: 2
-Tietokone laittoi ruutuun: 49
-asd laittoi X:n ruutuun: 3
-
-asd Voitti
-
-Uusi peli
- 
-Ensimmäisen pelaajan nimi on: kana
 kana laittoi X:n ruutuun: 1
+Tietokone laittoi ruutuun: 6
 kana laittoi X:n ruutuun: 2
+Tietokone laittoi ruutuun: 8
 kana laittoi X:n ruutuun: 3
 
 kana Voitti
 
 Uusi peli
+Peli numero: 1
  
-Ensimmäisen pelaajan nimi on: raha
+Ensimmäisen pelaajan nimi on: paavo
+Toisen pelaajan nimi on: pesu
 
-Yksinpeli
+Kaksinpeli
 
-raha laittoi X:n ruutuun: 1
-raha laittoi X:n ruutuun: 2
-raha laittoi X:n ruutuun: 3
+paavo laittoi X:n ruutuun: 1
+pesu laittoi O:n ruutuun: 2
+paavo laittoi X:n ruutuun: 3
+pesu laittoi O:n ruutuun: 4
+paavo laittoi X:n ruutuun: 5
+pesu laittoi O:n ruutuun: 6
+paavo laittoi X:n ruutuun: 8
+pesu laittoi O:n ruutuun: 7
+paavo laittoi X:n ruutuun: 9
 
-raha Voitti
-
-Uusi peli
- 
-Ensimmäisen pelaajan nimi on: kooooo
-
-Yksinpeli
-
-kooooo laittoi X:n ruutuun: 1
-kooooo laittoi X:n ruutuun: 2
-kooooo laittoi X:n ruutuun: 3
-
-kooooo Voitti
-Tietokone laittoi ruutuun: 7
-Tietokone laittoi ruutuun: 6
-Tietokone laittoi ruutuun: 4
-
-Uusi peli
- 
-Ensimmäisen pelaajan nimi on: maka
-
-Yksinpeli
-
-maka laittoi X:n ruutuun: 1
-maka laittoi X:n ruutuun: 2
-maka laittoi X:n ruutuun: 3
-
-maka Voitti
-
-Uusi peli
- 
-Ensimmäisen pelaajan nimi on: kaa
-
-Yksinpeli
-
-kaa laittoi X:n ruutuun: 1
-Tietokone laittoi ruutuun: 7
-kaa laittoi X:n ruutuun: 2
-Tietokone laittoi ruutuun: 6
-kaa laittoi X:n ruutuun: 3
-
-kaa Voitti
-
-Uusi peli
- 
-Ensimmäisen pelaajan nimi on: asd
-
-Yksinpeli
-
-asd laittoi X:n ruutuun: 1
-Tietokone laittoi ruutuun: 4
-asd laittoi X:n ruutuun: 3
-Tietokone laittoi ruutuun: 7
-asd laittoi X:n ruutuun: 2
-
-asd Voitti
-
-Uusi peli
- 
-Ensimmäisen pelaajan nimi on: asdsad
-
-Yksinpeli
-
-asdsad laittoi X:n ruutuun: 1
-Tietokone laittoi ruutuun: 5
-asdsad laittoi X:n ruutuun: 2
-Tietokone laittoi ruutuun: 4
-asdsad laittoi X:n ruutuun: 7
-Tietokone laittoi ruutuun: 9
-asdsad laittoi X:n ruutuun: 8
-Tietokone laittoi ruutuun: 6
-asdsad laittoi X:n ruutuun: 3
-
-asdsad Voitti
-
-Uusi peli
- 
-Ensimmäisen pelaajan nimi on: moi
-
-Yksinpeli
-
-moi laittoi X:n ruutuun: 1
-Tietokone laittoi ruutuun: 3
-moi laittoi X:n ruutuun: 2
-Tietokone laittoi ruutuun: 4
-moi laittoi X:n ruutuun: 7
-Tietokone laittoi ruutuun: 2
-moi laittoi X:n ruutuun: 8
-Tietokone laittoi ruutuun: 2
-moi laittoi X:n ruutuun: 9
-
-moi Voitti
-
-Uusi peli
- 
-Ensimmäisen pelaajan nimi on: kkakak
-
-Yksinpeli
-
-kkakak laittoi X:n ruutuun: 1
-Tietokone laittoi ruutuun: 8
-kkakak laittoi X:n ruutuun: 2
-Tietokone laittoi ruutuun: 3
-kkakak laittoi X:n ruutuun: 4
-Tietokone laittoi ruutuun: 5
-kkakak laittoi X:n ruutuun: 7
-
-kkakak Voitti
-
-Uusi peli
- 
-Ensimmäisen pelaajan nimi on: maka
-
-Yksinpeli
-
-maka laittoi X:n ruutuun: 1
-Tietokone laittoi ruutuun: 6
-maka laittoi X:n ruutuun: 2
-Tietokone laittoi ruutuun: 5
-maka laittoi X:n ruutuun: 9
-Tietokone laittoi ruutuun: 4
-
-Tietokone Voitti
+paavo Voitti

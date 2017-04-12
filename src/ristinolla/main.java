@@ -1,17 +1,23 @@
 package ristinolla;
 
 import java.util.Scanner;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.InputMismatchException;
 import java.util.Random;
 
 public class main{
 	private static Scanner lu = new Scanner(System.in);
+	
 	public static void main(String[] args) throws IOException {
-		
+		final Scanner lokilukija = new Scanner(new File("loki.txt"));
+		String rivi = "";
+		int numberOfGames = 0;
+		while (lokilukija.hasNext()) {
+			rivi = lokilukija.nextLine();
+			if (rivi.contains("Uusi peli")) {
+				numberOfGames++;
+			}
+		}
 		// define variables
 		int gametype = 0;
 		String p1 = null;
@@ -20,6 +26,7 @@ public class main{
 		
 		loki.println("");
 		loki.println("Uusi peli");
+		loki.println("Peli numero: " + numberOfGames);
 		loki.println(" ");
 		//gametype must be defined 
 		do{

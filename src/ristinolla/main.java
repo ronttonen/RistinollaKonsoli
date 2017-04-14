@@ -9,6 +9,9 @@ public class main{
 	private static Scanner lu = new Scanner(System.in);
 	
 	public static void main(String[] args) throws IOException {
+		for (String s : args) {
+			System.out.println(s);
+		} // Voi antaa argumentteja ennen ajoa, tulostaa viestin.
 		final Scanner lokilukija = new Scanner(new File("loki.txt"));
 		String rivi = "";
 		int numberOfGames = 0;
@@ -17,14 +20,15 @@ public class main{
 			if (rivi.contains("Uusi peli")) {
 				numberOfGames++;
 			}
-		}
+		} // lukee lokin läpi, kuinka monta peliä on pelattu ja osaa numeroida pelattavan pelin
 		lokilukija.close();
 		// define variables
 		int gametype = 0;
 		String p1 = null;
 		String p2 = null;
-		PrintWriter loki = new PrintWriter(new FileWriter("loki.txt", true));
-		
+		PrintWriter loki = new PrintWriter(new FileWriter("loki.txt", true)); // avaa lokiin kirjoittajan
+		loki.println("");
+		loki.println("-----------------------------------------------------------------");
 		loki.println("");
 		loki.println("Uusi peli");
 		loki.println("Peli numero: " + numberOfGames);
@@ -199,7 +203,7 @@ public class main{
 		}
 		loki.close();
 	}
-		else {
+		else { // yksinpeli
 			loki.println("");
 			loki.println("Yksinpeli");
 			loki.println("");
@@ -213,10 +217,10 @@ public class main{
 			for (int i=0;i<taulu.length;i++){
 					a = i+1;
 					taulu[i] = Character.forDigit(a, 10);			
-			}
+			} // asettaa pelipöydän ja vuoron pelaajalle
 			clear();
 			tulostaTaulu(taulu);
-			do {
+			do { //pelin mainloop
 				while(turn == 1) {
 					
 				p("Pelaajan " + p1 + " vuoro syötä 1-9");
@@ -234,12 +238,12 @@ public class main{
 					taulu[sy-1] = 'X';
 					loki.println(p1 + " laittoi X:n ruutuun: " + sy);
 					turn = 2;
-				}
+				} // pelaajan vuoro
 				}			
 				clear();
 				tulostaTaulu(taulu);
-				win = checkWin(taulu);
-				if (win == 0) {
+				win = checkWin(taulu); // tarkistaa onko pelaaja voittanut ennen tietokoneen vuoroa
+				if (win == 0) { // tietokoneen vuoro
 				p(p2 + "en vuoro");
 				wait(750);
 				target = botPelaa(taulu, win);
@@ -250,7 +254,7 @@ public class main{
 				turn = 1;
 				}
 			
-	} while (win == 0);
+	} while (win == 0); // mainloop jatkuu niin kauan kun kukaan ei ole voittanut, tai tasapeli
 			if (win == 1){
 				p(p1 + " VOITTI");
 				victoryDance(p1);
@@ -268,13 +272,23 @@ public class main{
 				loki.println("");
 				loki.println("Tasapeli");
 			}
-			loki.close();
+			if (win == 1) {
+				tulostaTaulu(taulu);
+				p(p1 + " VOITTI");
+			}
+			else if (win == 2) {
+				tulostaTaulu(taulu);
+				p("Tietokone VOITTI");
+			} // tulostaa lopputuloksen
+			
+			
+			loki.close(); // sulkee loki kirjoittajan
 	}
 	}
 	
 	
 	/*FUNCTIONS START*/
-	public static void wait(int mil){
+	public static void wait(int mil){ // wait function antaa kuvan, että tietokone miettii
 		try{
 			Thread.sleep(mil);
 		}
@@ -289,7 +303,7 @@ public class main{
 	}
 	public static void p(String a){
 		System.out.println(a);
-	}
+	} // nopeampi tapa printata
 	public static void botDance(int loops, int wait){
 		for (int i=0;i<loops;i++){
 			wait(wait);
@@ -305,7 +319,7 @@ public class main{
 			clear();
 			p("|[^.^]_");
 		}
-	}
+	} // joku ihme animaatio
 	public static void tulostaTaulu(char[] t){
 		
 		p("-------------");
@@ -316,7 +330,7 @@ public class main{
 		p("| " + t[6] + " | " + t[7] + " | " + t[8] + " |");
 		p("-------------");
 		
-	}
+	} // tulostaa peli taulun.
 	public static int checkWin(char[] taulu){
 		  if (	(taulu[0] == 'X' && taulu[1] == 'X' && taulu[2] == 'X') || 
 				(taulu[3] == 'X' && taulu[4] == 'X' && taulu[5] == 'X') || 
@@ -348,7 +362,7 @@ public class main{
 	        	return 0;
 	        }
 
-	}
+	} // tarkistaa onko kukaan voittanut, tai onko pelipöytä täynnä
 	
 	//botPelaa palauttaa numeron 0-9 mihin ruutuun se laittaa arvon
 	public static int botPelaa(char[] t, int win) throws IOException{
@@ -387,6 +401,6 @@ public class main{
 			wait(100);
 			clear();
 		}
-	}
+	} // hieno animaatio voittajalle
 	
 }

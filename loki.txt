@@ -1,0 +1,19 @@
+
+-----------------------------------------------------------------
+
+Uusi peli
+Peli numero: 0
+ 
+Ensimmäisen pelaajan nimi on: 1
+
+Yksinpeli
+
+1 laittoi X:n ruutuun: 2
+Tietokone laittoi ruutuun: 1
+1 laittoi X:n ruutuun: 5
+Tietokone laittoi ruutuun: 6
+1 laittoi X:n ruutuun: 9
+Tietokone laittoi ruutuun: 7
+1 laittoi X:n ruutuun: 8
+
+1 Voitti

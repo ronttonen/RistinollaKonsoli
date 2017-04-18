@@ -1,0 +1,37 @@
+
+-----------------------------------------------------------------
+
+Uusi peli
+Peli numero: 0
+ 
+Ensimmäisen pelaajan nimi on: miska
+
+Yksinpeli
+
+miska laittoi X:n ruutuun: 8
+Tietokone laittoi ruutuun: 3
+miska laittoi X:n ruutuun: 5
+Tietokone laittoi ruutuun: 6
+miska laittoi X:n ruutuun: 2
+
+miska Voitti
+
+-----------------------------------------------------------------
+
+Uusi peli
+Peli numero: 1
+ 
+Ensimmäisen pelaajan nimi on: Miska
+Toisen pelaajan nimi on: Roni
+
+Kaksinpeli
+
+Miska laittoi X:n ruutuun: 1
+Roni laittoi O:n ruutuun: 2
+Miska laittoi X:n ruutuun: 3
+Roni laittoi O:n ruutuun: 4
+Miska laittoi X:n ruutuun: 5
+Roni laittoi O:n ruutuun: 6
+Miska laittoi X:n ruutuun: 7
+
+Miska Voitti

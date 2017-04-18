@@ -39,10 +39,10 @@ public class main{
 			}
 		} // lukee lokin läpi, kuinka monta peliä on pelattu ja osaa numeroida pelattavan pelin
 		lokilukija.close();
-		// define variables
+		// alusta muuttujat
 		int gametype = 0;
-		String p1 = null;
-		String p2 = null;
+		String p1 = null; //p1 name
+		String p2 = null; //p2 name
 		PrintWriter loki = new PrintWriter(new FileWriter("loki.txt", true)); // avaa lokiin kirjoittajan
 		loki.println("");
 		loki.println("-----------------------------------------------------------------");
@@ -101,7 +101,7 @@ public class main{
 		int turn = 0;
 		int win = 0;
 		int a = 0;
-		botDance(1, 250); // LOOPS, WAIT
+		botDance(1, 250); // starting animation
 		char[] taulu = new char[9]; 
 		for (int i=0;i<taulu.length;i++){
 				a = i+1;
@@ -137,9 +137,9 @@ public class main{
 						p("Pelaajan " + p1 + " vuoro syötä 1-9");
 						int sy;
 						try{
-							sy = lu.nextInt(); // TRY CATCH
+							sy = lu.nextInt(); 
 						}
-						catch(InputMismatchException e){
+						catch(InputMismatchException e){ // catch non INT input
 							break;
 						}					
 						if (sy > 9 || sy < 1){
@@ -159,7 +159,7 @@ public class main{
 							p("Pelaajan " + p2 + " vuoro syötä 1-9");
 							int sy;
 							try{
-								sy = lu.nextInt(); // TRY CATCH
+								sy = lu.nextInt(); // catch non INT input
 							}
 							catch(InputMismatchException e){
 								break;
@@ -183,8 +183,8 @@ public class main{
 						//turn = 0;
 					//}
 				}
-				win = checkWin(taulu);
-				if (win == 1){
+				win = checkWin(taulu); // tarkista voitto
+				if (win == 1){ 
 					p(p1 + " VOITTI");
 					victoryDance(p1);
 					turn = 2;
@@ -313,7 +313,7 @@ public class main{
 	 */
 	public static void wait(int mil){ // wait function antaa kuvan, että tietokone miettii
 		try{
-			Thread.sleep(mil);
+			Thread.sleep(mil); // odota mil (millisekunti ) aika
 		}
 		catch(InterruptedException ie){
 			
@@ -326,8 +326,8 @@ public class main{
 	 * 
 	 */
 	public static void clear(){
-		for(int i = 0; i < 25;i++){
-		p("");	
+		for(int i = 0; i < 25;i++){ 
+		p("");	//tyhjennä ruutu
 		}
 	}
 	
@@ -362,7 +362,7 @@ public class main{
 			clear();
 			p("|[^.^]_");
 		}
-	} // joku ihme animaatio
+	} // joku ihme animaatio, se on tanssi :)
 	
 	/**
 	 * Prints gameboard. Parameter is board that is made in the beginning of the game

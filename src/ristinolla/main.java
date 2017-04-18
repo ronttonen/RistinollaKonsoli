@@ -5,9 +5,26 @@ import java.io.*;
 import java.util.InputMismatchException;
 import java.util.Random;
 
+
+/**
+ * Main class for the main game
+ * 
+ * 
+ * @author Roni
+ * 
+ *
+ */
+
 public class main{
 	private static Scanner lu = new Scanner(System.in);
 	
+	/**
+	 * 
+	 * Main function game runs inside main function
+	 * 
+	 * @param args
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws IOException {
 		for (String s : args) {
 			System.out.println(s);
@@ -288,6 +305,12 @@ public class main{
 	
 	
 	/*FUNCTIONS START*/
+	/**
+	 * 
+	 * A function to stall program for a time. Time chosen is parameter mil.
+	 * 
+	 * @param mil
+	 */
 	public static void wait(int mil){ // wait function antaa kuvan, että tietokone miettii
 		try{
 			Thread.sleep(mil);
@@ -296,14 +319,34 @@ public class main{
 			
 		}
 	}
+	
+	/**
+	 * Clears board.
+	 * 
+	 * 
+	 */
 	public static void clear(){
 		for(int i = 0; i < 25;i++){
 		p("");	
 		}
 	}
+	
+	/**
+	 * Faster system.out.println()
+	 * 
+	 * @param a
+	 */
 	public static void p(String a){
 		System.out.println(a);
 	} // nopeampi tapa printata
+	
+	/**
+	 * An animation made by miska. Takes in a wait time and how many times animation is looped.
+	 * 
+	 * @param loops
+	 * @param wait
+	 */
+	
 	public static void botDance(int loops, int wait){
 		for (int i=0;i<loops;i++){
 			wait(wait);
@@ -320,6 +363,13 @@ public class main{
 			p("|[^.^]_");
 		}
 	} // joku ihme animaatio
+	
+	/**
+	 * Prints gameboard. Parameter is board that is made in the beginning of the game
+	 * 
+	 * 
+	 * @param t
+	 */
 	public static void tulostaTaulu(char[] t){
 		
 		p("-------------");
@@ -331,6 +381,14 @@ public class main{
 		p("-------------");
 		
 	} // tulostaa peli taulun.
+	
+	/**
+	 * Checks if anyone has won the game. Takes in game board.
+	 * 
+	 * 
+	 * @param taulu
+	 * @return
+	 */
 	public static int checkWin(char[] taulu){
 		  if (	(taulu[0] == 'X' && taulu[1] == 'X' && taulu[2] == 'X') || 
 				(taulu[3] == 'X' && taulu[4] == 'X' && taulu[5] == 'X') || 
@@ -365,6 +423,14 @@ public class main{
 	} // tarkistaa onko kukaan voittanut, tai onko pelipöytä täynnä
 	
 	//botPelaa palauttaa numeron 0-9 mihin ruutuun se laittaa arvon
+	
+	/**
+	 * Ai for bot. Takes in gameboard and has anyone won the game
+	 * @param t
+	 * @param win
+	 * @return
+	 * @throws IOException
+	 */
 	public static int botPelaa(char[] t, int win) throws IOException{
 		// BOT always O
 		int target;
@@ -388,6 +454,13 @@ public class main{
 		}
 		return win = 2;
 			}
+	
+	/**
+	 * Victory dance is great animation by Miska
+	 * 
+	 * 
+	 * @param p
+	 */
 	
 	public static void victoryDance(String p){
 		for (int i=0;i<50;i++){
